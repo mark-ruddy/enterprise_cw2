@@ -1,5 +1,4 @@
-using System.Data.Entity;
-using University.Model.Student;
+using static University.Model;
 
 namespace University{
   interface IStudentRepository{

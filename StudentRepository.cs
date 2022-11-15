@@ -1,5 +1,5 @@
 using System.Data.Entity;
-using University.Model.Student;
+using static University.Model;
 
 namespace University{
   public class StudentRepository : IStudentRepository {
@@ -40,7 +40,7 @@ namespace University{
 
     public IEnumerable<String> CountryList() {
       var listOfCountries = File.ReadLines("countries.list").Select(line => new String(line)).ToList();
-      return listOfCountries
+      return listOfCountries;
     }
   }
 }

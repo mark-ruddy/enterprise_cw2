@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace University
 {
@@ -23,13 +23,13 @@ namespace University
 
             [DataType(DataType.Text)]
             // international mobile phone number regex
-            [RegularExpresion("^\+[1-9]{1}[0-9]{3,14}$")]
+            [RegularExpression(@"^\+[1-9]{1}[0-9]{3,14}$", ErrorMessage = "Not a valid Telephone Number")]
             [Required(ErrorMessage = "Telephone No. Required")]
             public string TelephoneNo { get; set; }
 
             [DataType(DataType.Text)]
             // default email regex built into HTML5
-            [RegularExpression("/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/")]
+            [RegularExpression(@"/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/", ErrorMessage = "Not a valid Email")]
             [Required(ErrorMessage = "Email Required")]
             public string email { get; set; }
 

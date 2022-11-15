@@ -1,5 +1,5 @@
-using System.Data.Entity;
-using University.Model.Student;
+using Microsoft.AspNetCore.Mvc;
+using static University.Model;
 
 namespace University{
   public class StudentController : Controller {
@@ -50,7 +50,7 @@ namespace University{
     [HttpGet, ActionName("Edit")]
     public ActionResult ConfirmEdit(int ID) {
       List<Student> students = (List<Student>)repository.SelectAll();
-      ViewBag.Students = student;
+      ViewBag.Students = students;
       Student existing = repository.SelectByID(ID);
       return View(existing);
     }
