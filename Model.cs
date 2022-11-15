@@ -10,7 +10,7 @@ namespace University
     {
         public class Student
         {
-            public int PracticeID { get; set; }
+            public int StudentID { get; set; }
 
             [DataType(DataType.Text)]
             [Required(ErrorMessage = "First Name Required")]

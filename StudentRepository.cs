@@ -11,12 +11,11 @@ namespace University{
     }
 
     public IEnumerable<Student> SelectAll() {
-      // TODO: sort by surname
       return db.Students.OrderBy(s => s.Surname).ToList();
     }
 
-    public Student SelectByID(int id) {
-      return db.Students.Find(id);
+    public Student SelectByID(int ID) {
+      return db.Students.Find(ID);
     }
 
     public void Insert(Student student) {
@@ -27,13 +26,18 @@ namespace University{
       db.Entry(student).State = EntityState.Modified;
     }
 
-    public void Delete(int id, int? replacementId) {
-      Student existing = db.Students.Find(id);
+    public void Delete(int ID, int? replacementID) {
+      Student existing = db.Students.Find(ID);
       db.Students.Remove(existing);
     }
 
     public void Save() {
       db.SaveChanges();
+    }
+
+    public IEnumerable<String> CountryList() {
+      var listOfCountries = File.ReadLines("countries.list").Select(line => new String(line)).ToList();
+      return listOfCountries
     }
   }
 }

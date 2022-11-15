@@ -12,14 +12,14 @@ namespace University{
 
     [HttpGet]
     public ActionResult index() {
-      List<Student> model = (List<Student>)repository.SelectAll();
-      return View(model);
+      List<Student> students = (List<Student>)repository.SelectAll();
+      return View(students);
     }
 
     [HttpGet]
-    public ActionResult Details(int id) {
-      Student existing = repository.SelectByID(id);
-      return View(existing);
+    public ActionResult Details(int ID) {
+      Student studentWithID = repository.SelectByID(ID);
+      return View(studentWithID);
     }
 
     [HttpPost]
@@ -33,14 +33,40 @@ namespace University{
       }
     }
 
+    [HttpPost]
+    public ActionResult Edit(Student student) {
+      if (ModelState.IsValid) {
+        repository.Update(student);
+        repository.Save();
+        return RedirectToAction("Index");
+      } else {
+        return View(student);
+      }
+    }
+
     [HttpGet, ActionName("Edit")]
-    public ActionResult ConfirmEdit(int id) {
+    public ActionResult ConfirmEdit(int ID) {
       List<Student> students = (List<Student>)repository.SelectAll();
       ViewBag.Students = student;
-      Student existing = repository.SelectByID(id);
+      Student existing = repository.SelectByID(ID);
       return View(existing);
     }
 
-    // TODO: continue with solution
+    [HttpPost]
+    public ActionResult Delete(int ID, int? replacementID) {
+      repository.Delete(ID, replacementID);
+      repository.Save();
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet, ActionName("Delete")]
+    public ActionResult ConfirmDelete(int ID) {
+      List<Student> students = (List<Student>)repository.SelectAll();
+      students.RemoveAll(s => s.StudentID == ID);
+
+      ViewBag.Students = students;
+      Student studentWithID = repository.SelectByID(ID);
+      return View(studentWithID);
+    }
   }
 }
