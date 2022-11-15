@@ -1,3 +1,6 @@
+using System.Data.Entity;
+using University.Model.Student;
+
 namespace University{
   public class StudentRepository : IStudentRepository {
     private UniversityContext db = null;
