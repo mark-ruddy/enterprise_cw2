@@ -1,0 +1,8 @@
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.csproj.AssemblyReference.cache
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.GeneratedMSBuildEditorConfig.editorconfig
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.AssemblyInfoInputs.cache
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.AssemblyInfo.cs
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.csproj.CoreCompileInputs.cache
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.MvcApplicationPartsAssemblyInfo.cache
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.RazorAssemblyInfo.cache
+/home/mark/dev/default/enterprise/enterprise_cw2/obj/Debug/net6.0/university.RazorAssemblyInfo.cs
